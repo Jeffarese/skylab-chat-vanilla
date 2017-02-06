@@ -1,6 +1,5 @@
 angular.module("skylabChatServices")
-	.factory('messagesService', function ($http, $rootScope) {
-    console.log('Service');
+	.factory('messagesService', function ($http, $rootScope, $firebaseArray) {
 		function getMessages() {
 			return [];
 		}

@@ -9,11 +9,12 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" ng-controller="authController">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <h1>Skylab Chat</h1>
-            <div ng-include src="'templates/message.html'"></div>
+            <button class="btn btn-primary" type="button" ng-click="login()">Login</button>
+            <!--<div ng-include src="'templates/message.html'"></div>-->
         </div>
     </div>
 
@@ -40,6 +41,7 @@
 <script src="js/services/messagesService.js"></script>
 <script src="js/controllers/index.js"></script>
 <script src="js/controllers/chatController.js"></script>
+<script src="js/controllers/authController.js"></script>
 
 </body>
 </html>
