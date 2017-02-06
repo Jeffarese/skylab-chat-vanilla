@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Skylab Chat</title>
+    <style>
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
           integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -11,9 +18,14 @@
 
 <div class="container" ng-controller="authController">
     <div class="row">
+
         <div class="col-md-6 col-md-offset-3">
             <h1>Skylab Chat</h1>
-            <button class="btn btn-primary" type="button" ng-click="login()">Login</button>
+            <div class="user-profile" ng-show="user != null">
+                <img ng-src="{{user.photo}}" alt="">
+                <span>{{user.name}}</span>
+            </div>
+            <button class="btn btn-primary" type="button" ng-click="login()" ng-show="user == null">Login</button>
             <!--<div ng-include src="'templates/message.html'"></div>-->
         </div>
     </div>

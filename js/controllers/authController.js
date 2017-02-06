@@ -15,7 +15,7 @@ angular.module("skylabChatControllers")
         }
       });
     $scope.login = function() {
-      auth.$signInWithPopup("google").then(function(firebaseUser) {
+      $scope.auth.$signInWithPopup("google").then(function(firebaseUser) {
         console.log(firebaseUser);
         console.log("Signed in as:", firebaseUser.user.uid);
       }).catch(function(error) {
