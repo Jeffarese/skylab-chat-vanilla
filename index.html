@@ -26,7 +26,16 @@
                 <span>{{user.name}}</span>
             </div>
             <button class="btn btn-primary" type="button" ng-click="login()" ng-show="user == null">Login</button>
-            <!--<div ng-include src="'templates/message.html'"></div>-->
+            <div class="chat" ng-controller="chatController" ng-show="user != null">
+                <div class="chat-messages">
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+                <input ng-model="message">
+                <button class="btn btn-default" type="button" ng-click="sendMessage(message)">Send</button>
+
+            </div>
         </div>
     </div>
 
