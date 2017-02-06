@@ -1,1 +1,1 @@
-angular.module("skylabChatApp",[ 'skylabChatControllers' ])
+angular.module("skylabChatApp",[ 'skylabChatControllers', 'firebase' ])
