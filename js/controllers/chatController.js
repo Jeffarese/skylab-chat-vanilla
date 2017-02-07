@@ -1,5 +1,5 @@
 angular.module("skylabChatControllers")
-  .controller('chatController', function ($scope, messagesService, $firebaseObject, $firebaseArray) {
+  .controller('chatController', function ($scope, $firebaseObject, $firebaseArray) {
     var ref = firebase.database().ref();
     var messagesRef = ref.child('messages');
     var messages = [];

@@ -9,6 +9,9 @@
             height: 40px;
             border-radius: 50%;
         }
+        .user-profile, .btn {
+            display: inline-block;
+        }
     </style>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
@@ -26,6 +29,7 @@
                 <span>{{user.name}}</span>
             </div>
             <button class="btn btn-primary" type="button" ng-click="login()" ng-show="user == null">Login</button>
+            <button class="btn btn-danger" type="button" ng-click="logout()" ng-hide="user == null">Logout</button>
             <div class="chat" ng-controller="chatController" ng-show="user != null">
                 <div class="chat-messages">
                     <ul ng-if="messagesList">
@@ -61,8 +65,6 @@
 <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
 <script src="js/app.js"></script>
-<script src="js/services/index.js"></script>
-<script src="js/services/messagesService.js"></script>
 <script src="js/controllers/index.js"></script>
 <script src="js/controllers/chatController.js"></script>
 <script src="js/controllers/authController.js"></script>

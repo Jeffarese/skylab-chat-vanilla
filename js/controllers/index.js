@@ -1,1 +1,1 @@
-angular.module("skylabChatControllers",[ 'skylabChatServices' ]);
+angular.module("skylabChatControllers",[ ]);

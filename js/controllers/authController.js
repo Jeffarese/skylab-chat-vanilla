@@ -14,8 +14,11 @@ angular.module("skylabChatControllers")
         }
       });
     $scope.login = function() {
-      $scope.auth.$signInWithPopup("google").then(function(firebaseUser) {
+      $scope.auth.$signInWithPopup("google").then(function() {
       }).catch(function(error) {
       });
+    };
+    $scope.logout = function() {
+      $scope.auth.$signOut();
     }
   });
