@@ -28,13 +28,16 @@
             <button class="btn btn-primary" type="button" ng-click="login()" ng-show="user == null">Login</button>
             <div class="chat" ng-controller="chatController" ng-show="user != null">
                 <div class="chat-messages">
-                    <ul>
-                        <li></li>
+                    <ul ng-if="messagesList">
+                        <li ng-repeat="message in messagesList">
+                            {{message.message}}
+                        </li>
                     </ul>
                 </div>
-                <input ng-model="message">
-                <button class="btn btn-default" type="button" ng-click="sendMessage(message, user)">Send</button>
-
+                <form ng-submit="sendMessage(message, user)">
+                    <input ng-model="message" required>
+                    <button class="btn btn-default" type="submit">Send</button>
+                </form>
             </div>
         </div>
     </div>

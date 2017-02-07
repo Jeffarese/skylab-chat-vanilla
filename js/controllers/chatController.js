@@ -3,16 +3,12 @@ angular.module("skylabChatControllers")
     var ref = firebase.database().ref();
     var messagesRef = ref.child('messages');
     var messages = [];
-    var messagesList = $firebaseArray(messagesRef);
-    console.log(messagesList);
-    $scope.getMessages = function() {
-      messagesList
-    };
+    $scope.messagesList = $firebaseArray(messagesRef);
     $scope.sendMessage = function(message, user) {
-      console.log('Send');
-      messagesList.$add({
+      $scope.messagesList.$add({
         message: message,
         user: user
       });
+      $scope.message = '';
     };
   });
