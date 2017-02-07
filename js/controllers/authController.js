@@ -9,17 +9,13 @@ angular.module("skylabChatControllers")
             photo: fbUser.photoURL,
             id: fbUser.uid
           };
-          console.log($scope.user);
         } else {
-          console.log("Signed out");
+          $scope.user = null;
         }
       });
     $scope.login = function() {
       $scope.auth.$signInWithPopup("google").then(function(firebaseUser) {
-        console.log(firebaseUser);
-        console.log("Signed in as:", firebaseUser.user.uid);
       }).catch(function(error) {
-        console.log("Authentication failed:", error);
       });
     }
   });
